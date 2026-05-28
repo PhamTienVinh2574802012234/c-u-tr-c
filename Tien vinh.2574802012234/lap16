@@ -1,0 +1,18 @@
+def tim_phan_tu_gan_nhat(a, x):
+    min_diff = float('inf')
+    vi_tri_gan_nhat = -1
+    gia_tri_gan_nhat = None
+    for i, gia_tri in enumerate(a):
+        diff = abs(gia_tri - x)
+        if diff < min_diff:
+            min_diff = diff
+            vi_tri_gan_nhat = i
+            gia_tri_gan_nhat = gia_tri
+            
+    return gia_tri_gan_nhat, vi_tri_gan_nhat
+a = [10, 22, 28, 29, 40]
+x = 26
+gia_tri, vi_tri = tim_phan_tu_gan_nhat(a, x)
+print(f"Mảng: {a}")
+print(f"Giá trị x = {x}")
+print(f"-> Gần nhất là {gia_tri} tại vị trí {vi_tri}")

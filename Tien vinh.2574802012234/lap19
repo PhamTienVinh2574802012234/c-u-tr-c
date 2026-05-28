@@ -1,0 +1,16 @@
+def find_student_by_id_dict(student_list, search_id):
+    for student in student_list:
+        if student["ma_sv"] == search_id:
+            print("--- THÔNG TIN SINH VIÊN TÌM THẤY ---")
+            print(f"Mã SV: {student['ma_sv']}")
+            print(f"Họ tên: {student['ho_ten']}")
+            print(f"Điểm TB: {student['diem_tb']}")
+            return
+    print(f"Thông báo: Không tìm thấy sinh viên có mã {search_id}.")
+danh_sach_sv = [
+    {"ma_sv": "SV001", "ho_ten": "Nguyen Van A", "diem_tb": 8.5},
+    {"ma_sv": "SV002", "ho_ten": "Tran Thi B", "diem_tb": 7.2},
+    {"ma_sv": "SV003", "ho_ten": "Le Van C", "diem_tb": 9.0}
+]
+find_student_by_id_dict(danh_sach_sv, "SV002")
+find_student_by_id_dict(danh_sach_sv, "SV999")
