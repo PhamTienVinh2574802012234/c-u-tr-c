@@ -1,1 +1,13 @@
-# c-u-tr-c
+def linear_search(a, x):
+    for i in range(len(a)):
+        if a[i] == x:
+            return i
+    return -1
+input_string = input("Nhập các phần tử của mảng (cách nhau bởi dấu cách): ")
+a = [int(item) for item in input_string.split()]
+x = int(input("Nhập giá trị x cần tìm: "))
+ket_qua = linear_search(a, x)
+if ket_qua != -1:
+    print(f"Vị trí đầu tiên của {x} trong mảng là: {ket_qua}")
+else:
+    print(f"Không tìm thấy {x} trong mảng (Kết quả: {ket_qua})")
