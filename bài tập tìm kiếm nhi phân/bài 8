@@ -1,0 +1,16 @@
+def integer_sqrt(n: int) -> int:
+    if n < 2:
+        return n
+    left, right = 2, n // 2
+    ans = 1
+    while left <= right:
+        mid = left + (right - left) // 2
+        num = mid * mid
+        if num == n:
+            return mid
+        elif num < n:
+            ans = mid
+            left = mid + 1
+        else:
+            right = mid - 1          
+    return ans

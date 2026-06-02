@@ -1,0 +1,10 @@
+def tim_kiem_sinh_vien(danh_sach_ten, ten_can_tim):
+    """
+    Hàm tìm kiếm một tên trong danh sách không phân biệt chữ hoa/chữ thường.
+    Trả về vị trí tìm thấy hoặc -1 nếu không tìm thấy.
+    """
+    ten_can_tim_lower = ten_can_tim.lower()
+    for i in range(len(danh_sach_ten)):
+        if danh_sach_ten[i].lower() == ten_can_tim_lower:
+            return i
+    return -1 

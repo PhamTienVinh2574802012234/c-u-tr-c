@@ -1,0 +1,20 @@
+def is_valid(p, m, limit):
+    students, current_sum = 1, 0
+    for pages in p:
+        if current_sum + pages > limit:
+            students += 1
+            current_sum = pages
+            if students > m: return False
+        else:
+            current_sum += pages
+    return True
+def allocate_books(p, m):
+    if len(p) < m: return -1
+    low, high = max(p), sum(p)
+    while low < high:
+        mid = (low + high) // 2
+        if is_valid(p, m, mid):
+            high = mid
+        else:
+            low = mid + 1
+    return low

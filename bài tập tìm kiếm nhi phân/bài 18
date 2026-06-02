@@ -1,0 +1,7 @@
+def find_kth_missing_linear(a, k):
+    for num in a:
+        if num <= k:
+            k += 1
+        else:
+            break
+    return k

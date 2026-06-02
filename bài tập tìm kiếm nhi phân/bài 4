@@ -1,0 +1,5 @@
+def last_occurrence(a, x):
+    for i in range(len(a) - 1, -1, -1):
+        if a[i] == x:
+            return i
+    return -1
