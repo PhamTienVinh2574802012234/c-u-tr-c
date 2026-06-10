@@ -1,0 +1,5 @@
+def sort_by_absolute_value(a):
+    return sorted(a, key=abs)
+a = [-3, 1, -2, 2]
+result = sort_by_absolute_value(a)
+print("Kết quả:", result)

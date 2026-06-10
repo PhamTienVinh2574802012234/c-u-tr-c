@@ -1,0 +1,15 @@
+def bubble_sort_optimized(arr):
+    n = len(arr)
+    luot_chay = 0
+    for i in range(n):
+        luot_chay += 1
+        has_swapped = False
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+                has_swapped = True
+        if not has_swapped:
+            break
+    print(f"Mảng đã sắp xếp: {arr}")
+    print(f"Số lượt chạy thực tế: {luot_chay}")
+    return arr

@@ -1,0 +1,41 @@
+def bubble_sort_count(arr):
+    """Sắp xếp nổi bọt thông thường và đếm số lần so sánh"""
+    a = arr.copy()
+    n = len(a)
+    comparisons = 0
+    for i in range(n):
+        swapped = False
+        for j in range(0, n - i - 1):
+            comparisons += 1
+            if a[j] > a[j + 1]:
+                a[j], a[j + 1] = a[j + 1], a[j]
+                swapped = True
+        if not swapped:
+            break
+    return a, comparisons
+def cocktail_shaker_sort_count(arr):
+    """Sắp xếp Cocktail Shaker và đếm số lần so sánh"""
+    a = arr.copy()
+    n = len(a)
+    comparisons = 0
+    start = 0
+    end = n - 1
+    swapped = True
+    while swapped:
+        swapped = False
+        for i in range(start, end):
+            comparisons += 1
+            if a[i] > a[i + 1]:
+                a[i], a[i + 1] = a[i + 1], a[i]
+                swapped = True
+        if not swapped:
+            break
+        end -= 1
+        swapped = False
+        for i in range(end - 1, start - 1, -1):
+            comparisons += 1
+            if a[i] > a[i + 1]:
+                a[i], a[i + 1] = a[i + 1], a[i]
+                swapped = True
+        start += 1
+    return a, comparisons

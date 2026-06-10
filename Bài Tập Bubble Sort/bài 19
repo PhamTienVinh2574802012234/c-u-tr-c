@@ -1,0 +1,9 @@
+def check_min_passes(a):
+    indexed_a = list(enumerate(a))
+    indexed_a.sort(key=lambda x: x[1])  
+    max_backward_distance = 0
+    for new_index, (old_index, value) in enumerate(indexed_a):
+        backward_distance = old_index - new_index
+        if backward_distance > max_backward_distance:
+            max_backward_distance = backward_distance
+    return max_backward_distance
